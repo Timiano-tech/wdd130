@@ -2,6 +2,8 @@
     --primary-color: #005a05;
     --accent1-color: #264653;
     --accent2-color: #e9c46a;
+    --white: #ffffff;
+    --black: #000000;
     --heading-font: "Times New Roman", "Georgia", serif;
     --body-font: Arial, Helvetica, sans-serif;
 }
@@ -15,6 +17,7 @@
 body {
     font-family: var(--body-font);
     color: var(--accent1-color);
+    background-color: var(--white);
 }
 
 /* HEADER - CSS Grid layout for horizontal layout between logo and nav */
@@ -55,7 +58,7 @@ nav a {
 }
 
 nav a:hover {
-    color: white;
+    color: var(--white);
 }
 
 /* Main container styling */
@@ -85,7 +88,7 @@ h1 {
     text-align: center;
     opacity: 0.7;
     background-color: var(--accent1-color);
-    color: white;
+    color: var(--white);
     font-family: var(--heading-font);
 }
 
@@ -96,10 +99,15 @@ h1 {
     right: 20px;
     background-color: var(--accent1-color);
     opacity: 0.85;
-    color: white;
+    color: var(--white);
     padding: 20px;
     margin: 0;
     border-radius: 8px;
+}
+
+/* FIXED: Changed text color to white for better contrast */
+.hero article p {
+    color: var(--white);
 }
 
 .hero article img {
@@ -124,6 +132,7 @@ h1 {
 .history-section p {
     line-height: 1.6;
     margin-bottom: 1rem;
+    color: var(--accent1-color);
 }
 
 /* Two-column layout for history content */
