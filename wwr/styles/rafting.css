@@ -7,11 +7,6 @@
     --body-font: Arial, Helvetica, sans-serif;
 }
 
-header {
-    background-color: var(--primary-color);
-    color: var(--accent2-color);
-}
-
 * {
     margin: 0;
     padding: 0;
@@ -23,37 +18,58 @@ body {
     color: var(--accent1-color);
 }
 
-header,
-main,
-footer {
-    width: 840px;
+/* HEADER - CSS Grid layout for horizontal layout between logo and nav */
+header {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 2rem;
+    background-color: var(--primary-color);
+    padding: 1rem 2rem;
+    width: 100%;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
-h1,
-h2 {
-    font-family: var(--heading-font);
-    color: var(--primary-color);
+.logo img {
+    display: block;
+    width: 100px;
+    height: auto;
 }
 
-nav,
-p,
-section,
-article {
-    margin: 16px;
-    padding: 8px;
+/* NAV - CSS Flex for horizontal layout */
+nav ul {
+    display: flex;
+    list-style: none;
+    justify-content: flex-end;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
 }
 
-.socialmedia a {
+nav a {
+    color: var(--accent2-color);
     text-decoration: none;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s ease;
 }
 
-.socialmedia a img {
-    width: 50px;
+nav a:hover {
+    color: white;
 }
 
+/* Main container styling */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Hero section - keep existing positioning */
 .hero {
     position: relative;
+    margin: 2rem 0;
 }
 
 .hero img {
@@ -71,15 +87,16 @@ h1 {
     opacity: 0.7;
     background-color: var(--accent1-color);
     color: white;
+    font-family: var(--heading-font);
 }
 
 .hero article {
     position: absolute;
-    top: 350px;
+    bottom: 20px;
     left: 20px;
     right: 20px;
     background-color: var(--accent1-color);
-    opacity: 0.7;
+    opacity: 0.85;
     color: white;
     padding: 20px;
     margin: 0;
@@ -92,7 +109,142 @@ h1 {
     margin-left: 16px;
 }
 
-/* FIX #2: Used --secondary-color so it's no longer unused */
-.some-element {
-    color: var(--secondary-color);
+/* HISTORY SECTION - Layout as shown in wireframe */
+.history-section {
+    margin: 4rem 0;
+}
+
+.history-section h2 {
+    text-align: center;
+    font-family: var(--heading-font);
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+.history-section p {
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+/* Two-column layout for history content */
+.history-section > p:first-of-type {
+    max-width: 800px;
+    margin: 0 auto 2rem auto;
+    text-align: center;
+}
+
+/* ADVENTURE SECTION - Five images horizontally using CSS Grid */
+.adventure-section {
+    margin: 4rem 0;
+}
+
+.adventure-section h2 {
+    text-align: center;
+    font-family: var(--heading-font);
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+/* CSS Grid for horizontal layout of 5 adventure images */
+.adventure-gallery {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+figure {
+    margin: 0;
+    text-align: center;
+}
+
+figure img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+figcaption {
+    margin-top: 0.5rem;
+    font-weight: bold;
+    color: var(--accent1-color);
+    font-size: 0.9rem;
+}
+
+/* FOOTER - Social images arranged horizontally to the right */
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--primary-color);
+    color: var(--accent2-color);
+    padding: 1.5rem 2rem;
+    max-width: 1200px;
+    margin: 2rem auto 0 auto;
+}
+
+footer p {
+    margin: 0;
+    color: var(--accent2-color);
+}
+
+.socialmedia {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.socialmedia a {
+    text-decoration: none;
+    display: inline-block;
+}
+
+.socialmedia a img {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease;
+}
+
+.socialmedia a img:hover {
+    transform: scale(1.1);
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    header {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    nav ul {
+        justify-content: center;
+    }
+
+    .adventure-gallery {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+    }
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    .hero article {
+        position: relative;
+        margin-top: 1rem;
+        background-color: var(--accent1-color);
+    }
+
+    h1 {
+        position: relative;
+        background-color: var(--accent1-color);
+        margin-bottom: 1rem;
+    }
 }
