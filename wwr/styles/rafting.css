@@ -221,6 +221,28 @@ footer p {
     transform: scale(1.1);
 }
 
+/* USING THE --black VARIABLE - Added box-shadow with black color */
+.adventure-gallery figure img {
+    box-shadow: 0 4px 8px var(--black);
+}
+
+/* Using black for subtle border on articles */
+.hero article {
+    border-left: 4px solid var(--black);
+}
+
+/* Using black for focus states on navigation */
+nav a:focus {
+    outline: 2px solid var(--black);
+    outline-offset: 2px;
+}
+
+/* Using black for additional styling on hover effects */
+.socialmedia a img:hover {
+    transform: scale(1.1);
+    filter: drop-shadow(0 2px 4px var(--black));
+}
+
 /* Responsive adjustments for smaller screens */
 @media (max-width: 768px) {
     header {
