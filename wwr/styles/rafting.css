@@ -92,6 +92,7 @@ h1 {
     font-family: var(--heading-font);
 }
 
+/* Combined .hero article rules - removed duplicate */
 .hero article {
     position: absolute;
     bottom: 20px;
@@ -103,6 +104,8 @@ h1 {
     padding: 20px;
     margin: 0;
     border-radius: 8px;
+    border-left: 4px solid var(--black);
+    /* Added border-left here instead of separate rule */
 }
 
 /* FIXED: Changed text color to white for better contrast */
@@ -168,12 +171,14 @@ figure {
     text-align: center;
 }
 
+/* Combined figure img rules */
 figure img {
     width: 100%;
     height: 200px;
     object-fit: cover;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px var(--black);
+    /* Using --black variable */
 }
 
 figcaption {
@@ -211,32 +216,22 @@ footer p {
     display: inline-block;
 }
 
+/* Combined social media img rules */
 .socialmedia a img {
     width: 40px;
     height: 40px;
     transition: transform 0.3s ease;
 }
 
-/* USING THE --black VARIABLE - Added box-shadow with black color */
-.adventure-gallery figure img {
-    box-shadow: 0 4px 8px var(--black);
-}
-
-/* Using black for subtle border on articles */
-.hero article {
-    border-left: 4px solid var(--black);
+.socialmedia a img:hover {
+    transform: scale(1.1);
+    filter: drop-shadow(0 2px 4px var(--black));
 }
 
 /* Using black for focus states on navigation */
 nav a:focus {
     outline: 2px solid var(--black);
     outline-offset: 2px;
-}
-
-/* Using black for additional styling on hover effects */
-.socialmedia a img:hover {
-    transform: scale(1.1);
-    filter: drop-shadow(0 2px 4px var(--black));
 }
 
 /* Responsive adjustments for smaller screens */
@@ -262,10 +257,13 @@ nav a:focus {
         gap: 1rem;
     }
 
+    /* Keep responsive .hero article but no longer a duplicate */
     .hero article {
         position: relative;
         margin-top: 1rem;
         background-color: var(--accent1-color);
+        border-left: 4px solid var(--black);
+        /* Keep border-left consistent */
     }
 
     h1 {
