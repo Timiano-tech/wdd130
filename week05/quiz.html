@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Basic HTML and CSS Quiz</title>
+    <link rel="stylesheet" href="quiz.css">
+</head>
+
+<body>
+    <div class="quiz-container">
+        <div class="quiz-content">
+            <h1>Basic HTML and CSS Quiz</h1>
+            <form method="post" action="#" id="quizForm">
+
+                <div class="question">
+                    <label for="q1" class="q-label">1. What does the acronym CSS stand for?</label>
+                    <input type="text" id="q1" name="q1" placeholder="Type your answer here..."
+                      autocomplete="off">
+                    <div class="question-hint">Fill in the blank — be specific.</div>
+                </div>
+
+                <!-- Question 2:-->
+                <div class="question">
+                    <label for="q2" class="q-label">2. How are id and class attributes selected in
+                        CSS?</label>
+                    <textarea id="q2" name="q2"
+                      placeholder="Explain the difference and syntax..."></textarea>
+                    <div class="question-hint">Short answer: describe selectors like #id vs
+                        .class</div>
+                </div>
+
+                <!-- Question 3: -->
+                <div class="question">
+                    <label for="q3" class="q-label">3. Which of the following is a valid CSS
+                        comment?</label>
+                    <select id="q3" name="q3">
+                        <option value="" selected disabled>Choose One ...</option>
+                        <option value="// comment //">// comment //</option>
+                        <option value="/* comment */">/* comment */</option>
+                        <option value="<!-- comment -->">&lt;!-- comment --&gt;</option>
+                    </select>
+                    <div class="question-hint">Select the correct syntax from the dropdown.</div>
+                </div>
+
+                <!-- Question 4: -->
+                <div class="question">
+                    <label for="q4" class="q-label">4. What is the bottom margin given this
+                        declaration?<br>
+                        <code
+                          style="background:#eef2fa; padding:0.2rem 0.5rem; border-radius:12px; font-size:0.9rem;">margin: 10px 5px 15px;</code>
+                    </label>
+                    <input type="number" id="q4" name="q4" placeholder="e.g., 15" step="1" value="">
+                    <div class="question-hint">Enter the numeric value (in pixels) for the bottom
+                        margin.</div>
+                </div>
+
+                <div class="submit-wrap">
+                    <button type="submit">Submit Quiz</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
