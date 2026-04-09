@@ -1,3 +1,4 @@
+/* CSS Variables & Reset */
 :root {
     --primary-color: #005a05;
     --accent1-color: #264653;
@@ -6,6 +7,15 @@
     --black: #000000;
     --heading-font: "Times New Roman", "Georgia", serif;
     --body-font: Arial, Helvetica, sans-serif;
+
+    /* Contact page specific colors */
+    --contact-bg-light: #f9f9f9;
+    --contact-border-accent: #e67e22;
+    --contact-card-bg: #fef9e8;
+    --contact-form-bg: #f0f7f4;
+    --contact-text-dark: #0a3b2f;
+    --contact-text-medium: #1e4a3b;
+    --contact-shadow: rgba(0, 0, 0, 0.1);
 }
 
 * {
@@ -20,7 +30,20 @@ body {
     background-color: var(--white);
 }
 
-/* HEADER - CSS Grid layout for horizontal layout between logo and nav */
+/* ===== LAYOUT UTILITIES ===== */
+.container,
+main,
+.contact-main {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+main,
+.contact-main {
+    padding: 0 2rem;
+}
+
+/* ===== HEADER ===== */
 header {
     display: grid;
     grid-template-columns: auto 1fr;
@@ -28,7 +51,6 @@ header {
     gap: 2rem;
     background-color: var(--primary-color);
     padding: 1rem 2rem;
-    width: 100%;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -39,14 +61,12 @@ header {
     height: auto;
 }
 
-/* NAV - CSS Flex for horizontal layout */
+/* ===== NAVIGATION ===== */
 nav ul {
     display: flex;
     list-style: none;
     justify-content: flex-end;
     gap: 2rem;
-    margin: 0;
-    padding: 0;
 }
 
 nav a {
@@ -61,14 +81,12 @@ nav a:hover {
     color: var(--white);
 }
 
-/* Main container styling */
-main {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
+nav a:focus {
+    outline: 2px solid var(--black);
+    outline-offset: 2px;
 }
 
-/* Hero section - keep existing positioning */
+/* ===== HERO SECTION ===== */
 .hero {
     position: relative;
     margin: 2rem 0;
@@ -92,7 +110,6 @@ h1 {
     font-family: var(--heading-font);
 }
 
-/* Combined .hero article rules - removed duplicate */
 .hero article {
     position: absolute;
     bottom: 20px;
@@ -102,13 +119,10 @@ h1 {
     opacity: 0.85;
     color: var(--white);
     padding: 20px;
-    margin: 0;
     border-radius: 8px;
     border-left: 4px solid var(--black);
-    /* Added border-left here instead of separate rule */
 }
 
-/* FIXED: Changed text color to white for better contrast */
 .hero article p {
     color: var(--white);
 }
@@ -119,12 +133,15 @@ h1 {
     margin-left: 16px;
 }
 
-/* HISTORY SECTION - Layout as shown in wireframe */
+/* ===== HISTORY SECTION ===== */
 .history-section {
     margin: 4rem 0;
 }
 
-.history-section h2 {
+.history-section h2,
+.adventure-section h2,
+.employees-section h2,
+.contact-form-section h2 {
     text-align: center;
     font-family: var(--heading-font);
     color: var(--primary-color);
@@ -138,27 +155,27 @@ h1 {
     color: var(--accent1-color);
 }
 
-/* Two-column layout for history content */
-.history-section > p:first-of-type {
-    max-width: 800px;
-    margin: 0 auto 2rem auto;
-    text-align: center;
-}
-
-/* ADVENTURE SECTION - Five images horizontally using CSS Grid */
+/* ===== ADVENTURE SECTION ===== */
 .adventure-section {
     margin: 4rem 0;
 }
 
-.adventure-section h2 {
+/* Image card styling - reused across adventure, employees, and contact */
+figure,
+.employee-card {
+    margin: 0;
     text-align: center;
-    font-family: var(--heading-font);
-    color: var(--primary-color);
-    margin-bottom: 2rem;
-    font-size: 2rem;
 }
 
-/* CSS Grid for horizontal layout of 5 adventure images */
+figure img,
+.employee-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px var(--black);
+}
+
 .adventure-gallery {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -166,29 +183,15 @@ h1 {
     margin: 2rem 0;
 }
 
-figure {
-    margin: 0;
-    text-align: center;
-}
-
-/* Combined figure img rules */
-figure img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px var(--black);
-    /* Using --black variable */
-}
-
-figcaption {
+figcaption,
+.employee-card .caption p {
     margin-top: 0.5rem;
     font-weight: bold;
     color: var(--accent1-color);
     font-size: 0.9rem;
 }
 
-/* FOOTER - Social images arranged horizontally to the right */
+/* ===== FOOTER ===== */
 footer {
     display: flex;
     justify-content: space-between;
@@ -216,7 +219,6 @@ footer p {
     display: inline-block;
 }
 
-/* Combined social media img rules */
 .socialmedia a img {
     width: 40px;
     height: 40px;
@@ -228,13 +230,212 @@ footer p {
     filter: drop-shadow(0 2px 4px var(--black));
 }
 
-/* Using black for focus states on navigation */
-nav a:focus {
-    outline: 2px solid var(--black);
+/* ===== CONTACT PAGE SPECIFIC ===== */
+.contact-main {
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.contact-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.company-info {
+    text-align: center;
+}
+
+.company-info h2 {
+    color: var(--contact-text-dark);
+    margin-top: 0;
+}
+
+.company-info address {
+    font-style: normal;
+    line-height: 1.6;
+    margin: 1rem 0;
+}
+
+.company-info p {
+    margin: 0.5rem 0;
+}
+
+/* Google Map container */
+.map-container {
+    margin: 1.5rem;
+    border-radius: 12px;
+    overflow: hidden;
+
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 300px;
+    border: 0;
+    display: block;
+}
+
+/* Employees section */
+.employees-section {
+    margin: 3rem 0;
+}
+
+.employee-profiles {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.employee-card {
+    flex: 1;
+    min-width: 220px;
+    max-width: 280px;
+    background: var(--white);
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    transition: transform 0.2s ease;
+}
+
+.employee-card:hover {
+    transform: translateY(-5px);
+}
+
+.employee-card img {
+    height: 260px;
+}
+
+.employee-card .caption {
+    padding: 1rem;
+    background: var(--contact-card-bg);
+}
+
+.employee-card .caption h3 {
+    margin: 0 0 0.3rem;
+    font-size: 1.25rem;
+    color: #2c3e2f;
+}
+
+.employee-card .caption p {
+    margin: 0;
+    color: var(--contact-border-accent);
+}
+
+/* Contact Form */
+.contact-form-section {
+    background: var(--contact-form-bg);
+    border-radius: 24px;
+    padding: 2rem;
+    margin: 2rem 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.contact-form-section h2 {
+    margin-top: 0;
+}
+
+.rafting-form {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--contact-text-medium);
+}
+
+/* Form input styling - consolidated */
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border 0.2s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--contact-border-accent);
+    box-shadow: 0 0 0 2px rgba(230, 126, 34, 0.2);
+}
+
+.radio-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+.radio-group label {
+    font-weight: normal;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.checkbox-group label {
+    margin-bottom: 0;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+/* Submit Button */
+.submit-btn {
+    background-color: var(--contact-border-accent);
+    color: var(--white);
+    border: none;
+    padding: 0.9rem 2rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-block;
+    width: 100%;
+    max-width: 260px;
+    margin-top: 0.5rem;
+    box-shadow: 0 4px 8px var(--contact-shadow);
+}
+
+.submit-btn:hover {
+    background-color: #bf5e0a;
+    transform: scale(1.02);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.submit-btn:focus {
+    outline: 2px solid #2c3e2f;
     outline-offset: 2px;
 }
 
-/* Responsive adjustments for smaller screens */
+.hero,
+.history-section,
+.adventure-section {
+    display: none;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
 @media (max-width: 768px) {
     header {
         grid-template-columns: 1fr;
@@ -257,18 +458,23 @@ nav a:focus {
         gap: 1rem;
     }
 
-    /* Keep responsive .hero article but no longer a duplicate */
     .hero article {
         position: relative;
         margin-top: 1rem;
-        background-color: var(--accent1-color);
-        border-left: 4px solid var(--black);
-        /* Keep border-left consistent */
     }
 
     h1 {
         position: relative;
         background-color: var(--accent1-color);
         margin-bottom: 1rem;
+    }
+
+    /* Contact page responsive */
+    .contact-grid {
+        flex-direction: column;
+    }
+
+    .employee-card {
+        min-width: 180px;
     }
 }
