@@ -98,7 +98,7 @@ nav a:focus {
     height: auto;
 }
 
-h1 {
+.hero_h1 {
     position: absolute;
     top: 20px;
     width: 100%;
@@ -248,9 +248,10 @@ footer p {
     text-align: center;
 }
 
-.company-info h2 {
+.contact_header {
     color: var(--contact-text-dark);
     margin-top: 0;
+    text-align: center;
 }
 
 .company-info address {
