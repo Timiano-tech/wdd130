@@ -248,7 +248,7 @@ footer p {
     text-align: center;
 }
 
-.contact_header {
+.company-info .contact_header {
     color: var(--contact-text-dark);
     margin-top: 0;
     text-align: center;
