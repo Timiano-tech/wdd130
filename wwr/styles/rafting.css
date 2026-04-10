@@ -430,11 +430,11 @@ footer p {
     outline-offset: 2px;
 }
 
-.hero,
+/* .hero,
 .history-section,
 .adventure-section {
     display: none;
-}
+} */
 
 /* ===== RESPONSIVE DESIGN ===== */
 @media (max-width: 768px) {
@@ -477,5 +477,115 @@ footer p {
 
     .employee-card {
         min-width: 180px;
+    }
+}
+
+/* Trips Page CSS */
+.trips-main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+}
+
+/* Call to Action Banner */
+.cta-banner {
+    background: #1e4a6e;
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    border-radius: 8px;
+    margin-bottom: 2.5rem;
+}
+
+.cta-banner h2 {
+    margin: 0 0 0.5rem 0;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #f4a261;
+    color: #1e2f3e;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.75rem 2rem;
+    border-radius: 5px;
+    margin-top: 1rem;
+}
+
+.cta-button:hover {
+    background-color: #e76f51;
+    color: white;
+}
+
+/* Three detailed trip descriptions - grid layout (multi-column) */
+.trips-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.trip-card {
+    background: #f9f9f9;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.trip-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.trip-card-content {
+    padding: 1rem;
+}
+
+.trip-card-content h3 {
+    margin-top: 0;
+    color: #1e4a6e;
+}
+
+.trip-card-content p {
+    line-height: 1.4;
+}
+
+/* Table styling */
+.trips-table-section {
+    margin: 2rem 0;
+    overflow-x: auto;
+}
+
+.trips-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border: 1px solid #ddd;
+}
+
+.trips-table th {
+    background-color: #1e4a6e;
+    color: white;
+    padding: 12px;
+    text-align: left;
+}
+
+.trips-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+.trips-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+@media (max-width: 768px) {
+    .trips-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .trips-main {
+        padding: 1rem;
     }
 }
