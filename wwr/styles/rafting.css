@@ -15,7 +15,6 @@
     --contact-form-bg: #f0f7f4;
     --contact-text-dark: #0a3b2f;
     --contact-text-medium: #1e4a3b;
-    --contact-shadow: rgba(0, 0, 0, 0.1);
 }
 
 * {
@@ -184,7 +183,7 @@ figcaption,
     font-size: 0.9rem;
 }
 
-/* ===== FOOTER ===== */
+/* FOOTER  */
 footer {
     display: flex;
     justify-content: space-between;
@@ -258,7 +257,6 @@ footer p {
     margin: 20px 0;
     border-radius: 16px;
     overflow: hidden;
-    box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1);
 }
 
 .map-container iframe {
@@ -283,7 +281,6 @@ footer p {
     border-radius: 20px;
     width: 240px;
     overflow: hidden;
-    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
     transition: all 0.2s;
 }
 
@@ -320,7 +317,6 @@ footer p {
     border-radius: 28px;
     padding: 28px 24px;
     margin: 20px 0;
-    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.05);
     border: 1px solid #e2ddd4;
 }
 
