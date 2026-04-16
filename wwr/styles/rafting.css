@@ -30,7 +30,6 @@ body {
     background-color: var(--white);
 }
 
-/* ===== LAYOUT UTILITIES ===== */
 .container,
 main,
 .contact-main {
@@ -43,7 +42,6 @@ main,
     padding: 0 2rem;
 }
 
-/* ===== HEADER ===== */
 header {
     display: grid;
     grid-template-columns: auto 1fr;
@@ -86,7 +84,6 @@ nav a:focus {
     outline-offset: 2px;
 }
 
-/* ===== HERO SECTION ===== */
 .hero {
     position: relative;
     margin: 2rem 0;
@@ -133,7 +130,6 @@ nav a:focus {
     margin-left: 16px;
 }
 
-/* ===== HISTORY SECTION ===== */
 .history-section {
     margin: 4rem 0;
 }
@@ -155,12 +151,10 @@ nav a:focus {
     color: var(--accent1-color);
 }
 
-/* ===== ADVENTURE SECTION ===== */
 .adventure-section {
     margin: 4rem 0;
 }
 
-/* Image card styling - reused across adventure, employees, and contact */
 figure,
 .employee-card {
     margin: 0;
@@ -172,8 +166,7 @@ figure img,
     width: 100%;
     height: 200px;
     object-fit: cover;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px var(--black);
+    border-radius: 2px;
 }
 
 .adventure-gallery {
@@ -532,60 +525,6 @@ footer p {
     border-bottom: 1px solid #e67e22;
 }
 
-/* Newsletter */
-.newsletter {
-    background: #eef4f2;
-    padding: 32px 24px;
-    margin: 40px 0;
-    text-align: center;
-    border-radius: 12px;
-}
-
-.newsletter h2 {
-    margin-top: 0;
-    font-size: 1.6rem;
-}
-
-.signup-form {
-    max-width: 500px;
-    margin: 20px auto;
-}
-
-.form-fields {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
-    margin-bottom: 16px;
-}
-
-.form-fields input {
-    flex: 1;
-    padding: 10px 12px;
-    border: 1px solid #ccc;
-    border-radius: 30px;
-    min-width: 180px;
-}
-
-.sub-btn {
-    background: #2c5a2a;
-    color: white;
-    border: none;
-    padding: 10px 28px;
-    font-size: 1rem;
-    border-radius: 30px;
-    cursor: pointer;
-}
-
-.sub-btn:hover {
-    background: #1e4a1e;
-}
-
-.small-note {
-    font-size: 0.75rem;
-    color: #5e7b6e;
-    margin-top: 16px;
-}
-
 /* Stats row */
 .stats {
     display: grid;
@@ -618,33 +557,63 @@ footer p {
     color: #555;
 }
 
-/* Trips page (keep from before but simplify) */
+/* Trips page */
+/* Trips page - simple, no over-styling */
 .trips-main {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 16px;
 }
 
-.cta-banner-trips {
+.trip-cta {
     background: #1e4a6e;
     color: white;
     text-align: center;
-    padding: 32px;
-    border-radius: 8px;
-    margin-bottom: 32px;
+    padding: 30px 20px;
+    margin-bottom: 30px;
+    border-radius: 6px;
+}
+
+.trip-cta h2 {
+    margin: 0 0 8px 0;
+    font-size: 1.8rem;
+}
+
+.trip-cta-btn {
+    display: inline-block;
+    background: #f4a261;
+    color: #1e2f3e;
+    padding: 8px 24px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 30px;
+    margin-top: 12px;
+}
+
+.trip-cta-btn:hover {
+    background: #e76f51;
+    color: white;
+}
+
+.section-title {
+    color: #1e4a6e;
+    border-bottom: 2px solid #f4a261;
+    padding-bottom: 8px;
+    margin: 30px 0 20px 0;
+    font-size: 1.6rem;
 }
 
 .trips-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
+    gap: 20px;
     margin-bottom: 40px;
 }
 
 .trip-card {
-    background: #f9f9f9;
+    background: #fafaf8;
     border: 1px solid #ddd;
-    border-radius: 8px;
+    border-radius: 6px;
     overflow: hidden;
 }
 
@@ -655,11 +624,23 @@ footer p {
 }
 
 .trip-card-content {
-    padding: 16px;
+    padding: 14px;
+}
+
+.trip-card-content h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #1e4a6e;
+    font-size: 1.3rem;
+}
+
+.trip-card-content p {
+    margin: 6px 0;
+    line-height: 1.4;
 }
 
 .trips-table-section {
-    margin: 32px 0;
+    margin: 30px 0 50px;
     overflow-x: auto;
 }
 
@@ -667,16 +648,33 @@ footer p {
     width: 100%;
     border-collapse: collapse;
     border: 1px solid #ccc;
+    font-size: 0.9rem;
 }
 
 .trips-table th {
     background: #1e4a6e;
     color: white;
-    padding: 10px;
+    padding: 10px 8px;
     text-align: left;
 }
 
 .trips-table td {
     border: 1px solid #ccc;
     padding: 8px;
+}
+
+.trips-table tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+.table-note {
+    margin-top: 12px;
+    font-size: 0.8rem;
+    color: #555;
+}
+
+@media (max-width: 768px) {
+    .trips-grid {
+        grid-template-columns: 1fr;
+    }
 }
