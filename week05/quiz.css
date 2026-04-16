@@ -154,22 +154,6 @@ hr {
     display: none;
 }
 
-@media (max-width: 600px) {
-    .quiz-content {
-        padding: 1.5rem;
-    }
-
-    h1 {
-        font-size: 1.6rem;
-    }
-
-    input,
-    textarea,
-    select {
-        max-width: 100%;
-    }
-}
-
 .inline-note {
     font-size: 0.8rem;
     color: #4b6b8a;

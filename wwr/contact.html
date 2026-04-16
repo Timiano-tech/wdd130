@@ -4,42 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- 
-        ==================================================================
-        Title & Meta Description Strategy:
-        - Title: "Contact Us | Rapids Whitewater Adventures"
-          → Clearly indicates page purpose, includes brand name for recognition.
-          → Appears as entry point in search results and browser tabs.
-        - Meta Description: "Get in touch with Rapids for trip inquiries, 
-          reservations, or feedback. Find our address, phone, email, and 
-          employee team. Book your adventure today!"
-          → Compelling, action-oriented, includes key contact info and 
-            service keywords. Helps users decide to click from search.
-        ==================================================================
-    -->
-    <title>Contact Us | Rapids Whitewater Adventures</title>
-
+    <title>Contact Rapids | Whitewater Adventures</title>
     <meta name="description"
-      content="Get in touch with Rapids for trip inquiries, reservations, or feedback. Find our address, phone, email, and employee team. Book your adventure today!">
-
+      content="Reach out to Rapids for trip questions, bookings, or just to say hi. We're in Kolob, CA. Call, email, or fill out the form.">
     <meta name="author" content="Ajayi Oluwatimileyin">
-
     <link rel="stylesheet" href="styles/rafting.css">
-
-
 </head>
 
 <body>
     <header>
-
         <div class="logo">
-            <img src="images/z-rapids-trees.jpg"
-              alt="White Water Rafting logo featuring a stylized oar and rushing river waves"
-              width="100">
+            <img src="images/z-rapids-trees.jpg" alt="Rafting logo" width="100">
         </div>
-
-        <!-- Navigation with four child <a> tags inside unordered list (identical to other pages) -->
         <nav aria-label="Main navigation">
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -52,150 +28,114 @@
 
     <main class="contact-main">
         <div class="company-info">
-            <h1 class="contact_header">White Water Rafting Company</h1>
+            <h1>White Water Rafting Co.</h1>
             <address>
-                <p>123 Main River Street<br>
-                    Kolob, California<br>
-                    ZIP: 92345</p>
-                <p><strong>Phone:</strong> +1 999 999 9999</p>
-                <p><strong>Email:</strong> <a
-                      href="mailto:info@whitewater.com">info@whitewater.com</a></p>
+                123 Main River Street<br>
+                Kolob, California<br>
+                ZIP: 92345<br><br>
+                <strong>Phone:</strong> +1 999 999 9999<br>
+                <strong>Email:</strong> <a href="mailto:info@whitewater.com">info@whitewater.com</a>
             </address>
         </div>
 
-
         <div class="contact-grid">
-
             <div class="map-container">
-                <iframe
-                  title="Google Map showing location of White Water Rafting Company at 123 Main River Street, Kolob, California"
+                <iframe title="Map to our Kolob location"
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3197.5935401753137!2d-119.01462538447448!3d36.73252057996458!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80945c2e8b7b5b5b%3A0x2f1c2b5c7f8e6d4c!2sKolob%2C%20CA%2092345%2C%20USA!5e0!3m2!1sen!2sus!4v1712448000000!5m2!1sen!2sus"
-                  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
+                  allowfullscreen="" loading="lazy"></iframe>
             </div>
 
             <section class="contact-form-section">
-                <h2>Send Us a Message</h2>
+                <h2>Send us a message</h2>
                 <form class="rafting-form" action="#" method="post">
-                    <!-- User's name -->
                     <div class="form-group">
-                        <label for="fullname">Name </label>
-                        <input type="text" id="fullname" name="fullname" placeholder="Placeholder"
+                        <label for="fullname">Your name *</label>
+                        <input type="text" id="fullname" name="fullname" placeholder="e.g., Alex R."
                           required>
                     </div>
 
-                    <!-- User's email address -->
                     <div class="form-group">
-                        <label for="email">Email Address </label>
-                        <input type="email" id="email" name="email" placeholder="Placeholder"
+                        <label for="email">Email address *</label>
+                        <input type="email" id="email" name="email" placeholder="you@example.com"
                           required>
                     </div>
 
-                    <!-- Purpose of message: radio buttons (General Inquiry, Reservation Question, Website Suggestion) -->
                     <div class="form-group">
-                        <label>Message Purpose </label>
+                        <label>What's this about?</label>
                         <div class="radio-group">
-                            <label>
-                                <input type="radio" id="purpose_general" name="purpose"
-                                  value="General Inquiry" required>
-                                General Inquiry
-                            </label>
-                            <label>
-                                <input type="radio" id="purpose_reservation" name="purpose"
-                                  value="Reservation Question">
-                                Reservation Question
-                            </label>
-                            <label>
-                                <input type="radio" id="purpose_website" name="purpose"
-                                  value="Website Suggestion">
-                                Website Suggestion
-                            </label>
+                            <label><input type="radio" name="purpose" value="General Inquiry"
+                                  required> General question</label>
+                            <label><input type="radio" name="purpose" value="Reservation Question">
+                                Booking / trip</label>
+                            <label><input type="radio" name="purpose" value="Website Suggestion">
+                                Website feedback</label>
                         </div>
                     </div>
 
-                    <!-- Message textarea -->
                     <div class="form-group">
                         <label for="message">Message</label>
                         <textarea id="message" name="message" rows="5"
-                          placeholder="Type here ..."></textarea>
+                          placeholder="Tell us what you need..."></textarea>
                     </div>
 
-                    <!-- Newsletter subscription checkbox -->
                     <div class="form-group checkbox-group">
                         <input type="checkbox" id="newsletter" name="newsletter" value="subscribe">
-                        <label for="newsletter">Please Subscribe me to the monthly
-                            newsletter</label>
+                        <label for="newsletter">Yes, send me the monthly newsletter</label>
                     </div>
 
-                    <!-- Submit button with clear descriptive text and proper styling -->
                     <div class="form-group">
-                        <button type="submit" class="submit-btn">Get in Touch!</button>
+                        <button type="submit" class="submit-btn">Send message</button>
                     </div>
                 </form>
             </section>
         </div>
 
-        <!-- Employee Profile section with at least three employees and titles -->
         <section class="employees-section">
-            <h2>Meet Our Expert Guides</h2>
+            <h2>Meet our guides</h2>
             <div class="employee-profiles">
-                <!-- Employee 1 -->
                 <div class="employee-card">
-                    <img src="images/rafting47_600.jpg"
-                      alt="Smiling river guide Sarah holding paddle">
+                    <img src="images/rafting47_600.jpg" alt="guide Sarah">
                     <div class="caption">
                         <h3>Sarah Rivers</h3>
-                        <p>Lead River Guide & Safety Officer</p>
+                        <p>Lead guide & safety</p>
                     </div>
                 </div>
-                <!-- Employee 2 -->
                 <div class="employee-card">
-                    <img src="images/rafting58_600.jpg"
-                      alt="Experienced guide Mike navigating rapids">
+                    <img src="images/rafting58_600.jpg" alt="guide Mike">
                     <div class="caption">
                         <h3>Mike Torrent</h3>
-                        <p>Senior Expedition Leader</p>
+                        <p>Senior expedition lead</p>
                     </div>
                 </div>
-                <!-- Employee 3 -->
                 <div class="employee-card">
-                    <img src="images/rafting59_600.jpg"
-                      alt="Adventure coordinator Emma smiling in rafting gear">
+                    <img src="images/rafting59_600.jpg" alt="coordinator Emma">
                     <div class="caption">
                         <h3>Emma Cascade</h3>
-                        <p>Customer Experience & Trip Coordinator</p>
+                        <p>Trip coordinator</p>
                     </div>
                 </div>
-                <!-- Extra profile to match wireframe feel (optional but wireframe shows three) -->
                 <div class="employee-card">
-                    <img src="images/rafting43_600.jpg" alt="River specialist James with group">
+                    <img src="images/rafting43_600.jpg" alt="rescue specialist James">
                     <div class="caption">
                         <h3>James Whitewater</h3>
-                        <p>Rapid Rescue Specialist</p>
+                        <p>Rapid rescue</p>
                     </div>
                 </div>
             </div>
         </section>
-
-
     </main>
 
     <footer>
-        <!-- Footer content exactly same as original rafting site -->
-        <p>© 2026 © Exciting Expeditions | Ajayi Oluwatimileyin</p>
+        <p>© 2026 Rapids Whitewater | Ajayi Oluwatimileyin</p>
         <nav class="socialmedia">
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
-                <img src="images/facebook-square.svg" alt="Facebook Icon">
-            </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-                <img src="images/linkedin-square.svg" alt="LinkedIn Icon">
-            </a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-                <img src="images/instagram.svg" alt="Instagram Icon">
-            </a>
+            <a href="https://facebook.com" target="_blank"><img src="images/facebook-square.svg"
+                  alt="FB"></a>
+            <a href="https://linkedin.com" target="_blank"><img src="images/linkedin-square.svg"
+                  alt="LinkedIn"></a>
+            <a href="https://instagram.com" target="_blank"><img src="images/instagram.svg"
+                  alt="IG"></a>
         </nav>
     </footer>
-
 </body>
 
 </html>
